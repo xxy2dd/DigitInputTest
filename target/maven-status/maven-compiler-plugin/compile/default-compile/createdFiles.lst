@@ -1,0 +1,9 @@
+com\example\demo\service\impl\CalculateServiceImpl.class
+com\example\demo\data\dataobject\DigitdataDO.class
+com\example\demo\web\controller\filter\CorsFilter.class
+com\example\demo\DigitInputTestApplication.class
+com\example\demo\web\controller\CalculateController.class
+com\example\demo\service\CalculateService.class
+com\example\demo\service\model\DigitdataModel.class
+com\example\demo\data\dao\DigitdataRepository.class
+com\example\demo\vo\ResultVO.class
