@@ -34,8 +34,8 @@ public class DigitdataModel {
      * @param digitdataDO
      * @param inputvalue
      */
-    public DigitdataModel(DigitdataDO digitdataDO, String inputvalue){
-        this.index = digitdataDO.getIndex();
+    public DigitdataModel(DigitdataDO digitdataDO, String inputvalue,Integer kind){
+        this.index = digitdataDO.getIndex()-400*(kind-1);
         this.dbvalue = digitdataDO.getValue();
         this.inputvalue = inputvalue;
     }

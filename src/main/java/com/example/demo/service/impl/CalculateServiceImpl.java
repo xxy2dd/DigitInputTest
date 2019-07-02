@@ -22,12 +22,12 @@ public class CalculateServiceImpl implements CalculateService{
     @Autowired
     DigitdataRepository digitdataRepository;
     @Override
-    public ResultVO getResult(List<String> inputList) {
+    public ResultVO getResult(List<String> inputList,Integer kind) {
         ResultVO resultVO = new ResultVO();
         List<DigitdataModel> modelList = new ArrayList<>();
         Integer score = 0;
         Integer count = 0;
-        List<DigitdataDO> dbList = digitdataRepository.findAll();
+        List<DigitdataDO> dbList = digitdataRepository.findByKind(kind);
         for (int i = 0; i < inputList.size(); i++) {
             String value = dbList.get(i).getValue().trim();
             String input = inputList.get(i).trim();
@@ -37,7 +37,7 @@ public class CalculateServiceImpl implements CalculateService{
                 if(!input.equals("null")){
                     count += 1;
                 }
-                DigitdataModel digitdataModel = new DigitdataModel(dbList.get(i), inputList.get(i));
+                DigitdataModel digitdataModel = new DigitdataModel(dbList.get(i), inputList.get(i),kind);
                 modelList.add(digitdataModel);
             }
         }

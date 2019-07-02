@@ -13,4 +13,6 @@ import java.util.List;
 public interface DigitdataRepository extends JpaRepository<DigitdataDO,Integer>{
     @Override
     List<DigitdataDO> findAll();
+
+    List<DigitdataDO> findByKind(Integer kind);
 }

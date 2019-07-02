@@ -28,14 +28,15 @@ public class CalculateController {
 
     @ResponseBody
     @RequestMapping(value = "/submit",method = RequestMethod.POST)
-    public ResultVO submit(String inputList){
+    public ResultVO submit(String inputList,String kind){
         List<String> inputs = new ArrayList<>(Arrays.asList(inputList.split(",")));
         if(inputs.size()!=400){
             for(int i = inputs.size();i<400;i++){
                 inputs.add("null");
             }
         }
-        return calculateService.getResult(inputs);
+        Integer k = Integer.parseInt(kind.trim());
+        return calculateService.getResult(inputs,k);
     }
 
 }

@@ -11,5 +11,11 @@ import java.util.Map;
  * @description
  */
 public interface CalculateService {
-    ResultVO getResult(List<String> inputList);
+    /**
+     * 根据用户的输入结果以及所选试卷类型来计算用户分数
+     * @param inputList
+     * @param kind
+     * @return
+     */
+    ResultVO getResult(List<String> inputList,Integer kind);
 }
